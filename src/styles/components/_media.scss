@@ -1,0 +1,101 @@
+/*media*/
+@include media-breakpoint-down(md) {
+	.nav {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.social__links {
+		margin-top: 20px;
+	}
+}
+@include media-breakpoint-down(sm) {
+	header {
+		position: relative;
+		.logo {
+			margin-left: 15px;
+		}
+		.nav {
+			padding: 0;
+			opacity: 0;
+			z-index: 50;
+			position: absolute;
+			z-index: -1;
+			top: 120px;
+			left: 30px;
+			width: 160px;
+			flex-direction: column;
+			background: $white;
+			border: 2px solid $black-text;
+			box-shadow: 0 0 8px 5px rgba($white,.8);
+			transition: .3s;
+			> li {
+				padding: 5px 15px;
+				cursor: pointer;
+				transform: translateY(-7px);
+				transition: .4s;
+				&:hover {
+					> a {
+						color: $accent-color;
+					}
+				}
+			}
+			&.open {
+				opacity: 1;
+				z-index: 30;
+				> li {
+					transform: translateY(0);
+				}
+			}
+			.dropdown-menu {
+				left: auto !important;
+				right: -40%;
+			}
+		}
+	}
+	.payway__img {
+		img {
+			margin-top: 20px;
+		}
+	}
+	
+}
+@include media-breakpoint-down(xs) {
+		header {
+		padding-bottom: 15px;
+		.logo {
+			margin-right: 15px;
+		}
+	}
+	.shop_line {
+		margin-top: 30px;
+	}
+	.advantages {
+		margin-top: 30px;
+	}
+	.social {
+		margin-top: 40px;
+		padding-top: 40px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 30px;
+		&__links {
+			a {
+				width: 35px;
+				height: 35px;
+				line-height: 35px;
+			}
+		}
+
+	}
+	
+}
+@media screen and (max-width: 408px) {
+	header {
+		.nav {
+			top: 80px;
+		}
+	}
+	.clear-btn, input[type="search"] {
+		margin-top: 25px;
+	}
+}
